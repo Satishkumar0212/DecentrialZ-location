@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Responsive Search Filters</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #eef2f3;
+    }
+
+    .card {
+      max-width: 500px;
+      background: #fff;
+      margin: 50px auto;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: #007BFF;
+    }
+
+    .search-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .search-btn:hover {
+      background: #0056b3;
+    }
+
+    @media screen and (max-width: 600px) {
+      .card {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Search Filters</h2>
+    <div class="form-group">
+      <label for="search">Search Term</label>
+      <input type="text" id="search" placeholder="Enter search term">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="Enter location">
+    </div>
+
+    <div class="form-group">
+      <label for="range">Nearby Range</label>
+      <select id="range">
+        <option>Select nearby range</option>
+        <option>5 km</option>
+        <option>10 km</option>
+        <option>20 km</option>
+      </select>
+    </div>
+
+    <button class="search-btn">Search</button>
+  </div>
+
+</body>
+</html>
