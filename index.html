@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar with Filters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 25px;
+            width: fit-content;
+        }
+        .search-input, .location-input {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 10px;
+            gap: 5px;
+        }
+        .search-input input, .location-input input {
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+        .location-input::before {
+            content: "📍";
+            font-size: 16px;
+        }
+        .range-select {
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 14px;
+            background-color: white;
+            outline: none;
+        }
+        .search-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .search-btn:hover {
+            background-color: #0056b3;
+        }
+        .filter-links {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .filter-links a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .filter-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h3>Search Bar and Filters</h3>
+    <div class="search-section">
+        <div class="search-input">
+            <span>📈</span>
+            <input type="text" placeholder="Orthostatic Hypotension" id="searchQuery">
+        </div>
+        <div class="location-input">
+            <input type="text" placeholder="Location" id="locationQuery">
+        </div>
+        <select class="range-select" id="rangeSelect">
+            <option value="">Select nearby range</option>
+            <option value="5">5 miles</option>
+            <option value="10">10 miles</option>
+            <option value="25">25 miles</option>
+            <option value="50">50 miles</option>
+        </select>
+        <button class="search-btn" onclick="handleSearch()">Search</button>
+    </div>
+    <div class="filter-links">
+        <a href="#" onclick="clearFilters()">Clear filters</a>
+        <a href="#">Advanced Filters</a>
+    </div>
+
+    <script>
+        function handleSearch() {
+            const query = document.getElementById('searchQuery').value;
+            const location = document.getElementById('locationQuery').value;
+            const range = document.getElementById('rangeSelect').value;
+            alert(`Searching for: ${query || 'N/A'} in ${location || 'N/A'} within ${range || 'N/A'} miles`);
+        }
+
+        function clearFilters() {
+            document.getElementById('searchQuery').value = '';
+            document.getElementById('locationQuery').value = '';
+            document.getElementById('rangeSelect').value = '';
+        }
+    </script>
+</body>
+</html>
